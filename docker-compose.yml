@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: careus-postgres
+    environment:
+      POSTGRES_DB: careus
+      POSTGRES_USER: careus
+      POSTGRES_PASSWORD: careus
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./src/main/resources/db/migration:/docker-entrypoint-initdb.d
