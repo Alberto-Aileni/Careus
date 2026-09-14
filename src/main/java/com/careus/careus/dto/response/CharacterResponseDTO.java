@@ -17,7 +17,7 @@ public record CharacterResponseDTO(
         List<DisciplineResponseDTO> disciplines,
         List<WorkResponseDTO> works,
         List<IdeaResponseDTO> ideas
-        ) {}
+        ){}
 
 
 

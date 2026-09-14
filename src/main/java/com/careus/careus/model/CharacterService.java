@@ -1,7 +1,9 @@
 package com.careus.careus.model;
 
 import com.careus.careus.entity.Character;
+import com.careus.careus.mapper.CharacterMapper;
 import org.springframework.stereotype.Service;
+import com.careus.careus.dto.response.CharacterResponseDTO;
 
 import java.util.List;
 
@@ -9,20 +11,32 @@ import java.util.List;
 public class CharacterService {
 
     private final CharacterRepository characterRepository;
+    private final CharacterMapper characterMapper;
 
-    public CharacterService(CharacterRepository characterRepository) {
+    public CharacterService(CharacterRepository characterRepository, CharacterMapper characterMapper) {
         this.characterRepository = characterRepository;
+        this.characterMapper = characterMapper;
     }
 
-    public List<Character> getCharacters(){
-        return characterRepository.findAll();
+    public List<CharacterResponseDTO> getCharacters(){
+
+        return characterRepository.findAll()
+                .stream()
+                .map(characterMapper::toResponseDTO)
+                .toList();
     }
 
-    public List<Character> getCharacterFromCountry(Long id){
-        return characterRepository.FindByCountryId(id);
+    public List<CharacterResponseDTO> getCharacterFromCountry(Long id){
+        return characterRepository.FindByCountryId(id)
+                .stream()
+                .map(characterMapper::toResponseDTO)
+                .toList();
     }
 
-    public List<Character> getCharacterByName(String name){
-        return characterRepository.findByNameContainingIgnoreCase(name);
+    public List<CharacterResponseDTO> getCharacterByName(String name){
+        return characterRepository.findByNameContainingIgnoreCase(name)
+                .stream()
+                .map(characterMapper::toResponseDTO)
+                .toList();
     }
 }
