@@ -8,25 +8,30 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
+@Table(name = "work")
 public class Work {
 
     @Id
     @Column(name = "id_work", unique = true)
     private long id;
 
+    @Column(name = "name")
     private String nombre;
 
+    @Column(name = "description")
     private String descripcion;
 
-    private String Language;
+    @Column(name = "language")
+    private String language;
 
+    @Column(name = "creation_date")
     private Date creationDate;
 
     public Work(long id, String nombre, String descripcion, String language, Date creationDate) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        Language = language;
+        language = language;
         this.creationDate = creationDate;
     }
 
@@ -55,11 +60,11 @@ public class Work {
     }
 
     public String getLanguage() {
-        return Language;
+        return language;
     }
 
     public void setLanguage(String language) {
-        Language = language;
+        language = language;
     }
 
     public Date getCreationDate() {

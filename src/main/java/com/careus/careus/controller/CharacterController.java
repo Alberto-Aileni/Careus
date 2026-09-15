@@ -22,19 +22,20 @@ public class CharacterController {
         this.characterMapper = characterMapper;
     }
 
-    @GetMapping
+    @GetMapping("/characters")
     public ResponseEntity<List<CharacterResponseDTO>> getCharacters(){
         List<CharacterResponseDTO> characters = characterService.getCharacters();
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping
+    @GetMapping("/name/{name}")
     public ResponseEntity<List<CharacterResponseDTO>> getCharacterByName(@PathVariable String name){
         List<CharacterResponseDTO> characters = characterService.getCharacterByName(name);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping ResponseEntity<List<CharacterResponseDTO>> getCharactersByCountry(@PathVariable Long id){
+    @GetMapping("/country/{id}")
+    ResponseEntity<List<CharacterResponseDTO>> getCharactersByCountry(@PathVariable Long id){
         List<CharacterResponseDTO> characters = characterService.getCharacterFromCountry(id);
         return ResponseEntity.ok(characters);
     }

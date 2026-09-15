@@ -6,15 +6,17 @@ import java.util.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "character")
 public class Character {
 
     @Id
     @Column(name = "id_character", unique = true)
     private long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "birth_place")
     private String birthPlace;
 
     @ElementCollection
@@ -22,23 +24,27 @@ public class Character {
             name = "character_nationality",
             joinColumns = @JoinColumn(name = "id_character")
     )
-    @Column(name = "nacionalidad")
-    private List<String> nacionalidades = new ArrayList<>();
+    @Column(name = "nationalities")
+    private List<String> nacionalities = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(
-            name = "personaje_idiomas",
+            name = "character_language",
             joinColumns = @JoinColumn(name = "id_character")
     )
-    @Column(name = "idioma")
-    private List<String> idiomas = new ArrayList<>();
+    @Column(name = "language")
+    private List<String> language = new ArrayList<>();
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "image_url")
     private String imageUrl;
 
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
+    @Column(name = "passing_date")
     private LocalDate passingDate;
 
     @ManyToMany
@@ -47,7 +53,7 @@ public class Character {
             joinColumns = @JoinColumn(name = "id_character"),
             inverseJoinColumns = @JoinColumn(name = "id_country")
     )
-    private Set<Country> paises = new HashSet<>();
+    private Set<Country> countrys = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -65,17 +71,17 @@ public class Character {
     @JoinColumn(name = "id_idea")
     private List<Idea> ideas = new ArrayList<>();
 
-    public Character(long id, String name, String birthPlace, List<String> nacionalidades, List<String> idiomas, String description, String imageUrl, LocalDate birthDate, LocalDate passingDate, Set<Country> paises, Set<Discipline> disciplines, List<Work> works, List<Idea> ideas) {
+    public Character(long id, String name, String birthPlace, List<String> nacionalities, List<String> language, String description, String imageUrl, LocalDate birthDate, LocalDate passingDate, Set<Country> countrys, Set<Discipline> disciplines, List<Work> works, List<Idea> ideas) {
         this.id = id;
         this.name = name;
         this.birthPlace = birthPlace;
-        this.nacionalidades = nacionalidades;
-        this.idiomas = idiomas;
+        this.nacionalities = nacionalities;
+        this.language = language;
         this.description = description;
         this.imageUrl = imageUrl;
         this.birthDate = birthDate;
         this.passingDate = passingDate;
-        this.paises = paises;
+        this.countrys = countrys;
         this.disciplines = disciplines;
         this.works = works;
         this.ideas = ideas;
@@ -105,20 +111,20 @@ public class Character {
         this.birthPlace = birthPlace;
     }
 
-    public List<String> getNacionalidades() {
-        return nacionalidades;
+    public List<String> getNacionalities() {
+        return nacionalities;
     }
 
-    public void setNacionalidades(List<String> nacionalidades) {
-        this.nacionalidades = nacionalidades;
+    public void setNacionalities(List<String> nacionalities) {
+        this.nacionalities = nacionalities;
     }
 
-    public List<String> getIdiomas() {
-        return idiomas;
+    public List<String> getLanguage() {
+        return language;
     }
 
-    public void setIdiomas(List<String> idiomas) {
-        this.idiomas = idiomas;
+    public void setLanguage(List<String> language) {
+        this.language = language;
     }
 
     public String getDescription() {
@@ -153,12 +159,12 @@ public class Character {
         this.passingDate = passingDate;
     }
 
-    public Set<Country> getPaises() {
-        return paises;
+    public Set<Country> getCountrys() {
+        return countrys;
     }
 
-    public void setPaises(Set<Country> paises) {
-        this.paises = paises;
+    public void setCountrys(Set<Country> countrys) {
+        this.countrys = countrys;
     }
 
     public Set<Discipline> getDisciplines() {

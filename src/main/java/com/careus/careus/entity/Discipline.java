@@ -6,14 +6,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "discipline")
 public class Discipline {
 
     @Id
     @Column(name = "id_discipline", unique = true)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "description")
     private String description;
 
     public Discipline(Long id, String name, String description) {

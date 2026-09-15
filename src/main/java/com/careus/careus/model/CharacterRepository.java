@@ -15,15 +15,5 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     List<Character> findByNameContainingIgnoreCase(String name);
 
-    Optional<Character> findByBirthDate(LocalDate birthgDate);
-
-    Optional<Character> findByPassingDate(LocalDate passingDate);
-
-    List<Character> findByNacionalityContainingIgnoreCase(String nacionality);
-
-    List<Character> findByLanguageContainingIgnoreCase(String language);
-
-    List<Character> FindByDisciplineIdContainingIgnoreCase(Long idDiscipline);
-
-    List<Character> FindByCountryId(Long idCountry);
+    List<Character> findByCountrys_Id(Long idCountry);
 }

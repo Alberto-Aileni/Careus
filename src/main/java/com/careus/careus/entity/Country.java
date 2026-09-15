@@ -2,22 +2,32 @@ package com.careus.careus.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "country")
 public class Country {
+
+    @Id
     @Column(name = "id_country", unique = true)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "flag_url")
     private String flagUrl;
 
+    @Column(name = "formation_date")
     private LocalDate formationDate;
 
+    @Column(name = "dismatle_date")
     private LocalDate dismatleDate;
 
     public Country(Long id, String name, String description, String flagUrl, LocalDate formationDate, LocalDate dismatleDate) {

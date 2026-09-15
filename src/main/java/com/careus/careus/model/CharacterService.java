@@ -19,7 +19,6 @@ public class CharacterService {
     }
 
     public List<CharacterResponseDTO> getCharacters(){
-
         return characterRepository.findAll()
                 .stream()
                 .map(characterMapper::toResponseDTO)
@@ -27,7 +26,7 @@ public class CharacterService {
     }
 
     public List<CharacterResponseDTO> getCharacterFromCountry(Long id){
-        return characterRepository.FindByCountryId(id)
+        return characterRepository.findByCountrys_Id(id)
                 .stream()
                 .map(characterMapper::toResponseDTO)
                 .toList();
