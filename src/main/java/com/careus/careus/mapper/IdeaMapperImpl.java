@@ -6,6 +6,10 @@ import com.careus.careus.entity.Idea;
 public class IdeaMapperImpl implements IdeaMapper{
     @Override
     public IdeaResponseDTO toResponseDTO(Idea idea) {
-        return null;
+        return new IdeaResponseDTO(
+                idea.getId(),
+                idea.getName(),
+                idea.getDescription()
+        );
     }
 }

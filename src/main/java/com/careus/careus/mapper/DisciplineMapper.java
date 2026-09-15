@@ -6,4 +6,5 @@ import com.careus.careus.entity.Discipline;
 public interface DisciplineMapper {
 
     DisciplineResponseDTO toResponseDTO(Discipline discipline);
+
 }

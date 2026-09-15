@@ -6,6 +6,10 @@ import com.careus.careus.entity.Discipline;
 public class DisciplineMapperImpl implements DisciplineMapper{
     @Override
     public DisciplineResponseDTO toResponseDTO(Discipline discipline) {
-        return null;
+        return new DisciplineResponseDTO(
+                discipline.getId(),
+                discipline.getName(),
+                discipline.getDescription()
+        );
     }
 }

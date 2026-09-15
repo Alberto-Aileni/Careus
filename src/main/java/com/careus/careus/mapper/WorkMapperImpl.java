@@ -6,6 +6,12 @@ import com.careus.careus.entity.Work;
 public class WorkMapperImpl implements WorkMapper{
     @Override
     public WorkResponseDTO toResponseDTO(Work work) {
-        return null;
+        return new WorkResponseDTO(
+                work.getId(),
+                work.getNombre(),
+                work.getDescripcion(),
+                work.getLanguage(),
+                work.getCreationDate()
+        );
     }
 }
