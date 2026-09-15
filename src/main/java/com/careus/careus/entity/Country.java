@@ -30,7 +30,7 @@ public class Country {
     private LocalDate dismatleDate;
 
     @ManyToMany
-    @JoinTable(name = "countrys_characters",
+    @JoinTable(name = "characters_countrys",
             joinColumns = @JoinColumn(name = "id_country"),
             inverseJoinColumns = @JoinColumn(name = "id_character")
     )

@@ -20,7 +20,7 @@ public class Discipline {
     private String description;
 
     @ManyToMany
-    @JoinTable(name = "disciplines_characters",
+    @JoinTable(name = "characters_disciplines",
             joinColumns = @JoinColumn(name = "id_discipline"),
             inverseJoinColumns = @JoinColumn(name = "id_character")
     )
