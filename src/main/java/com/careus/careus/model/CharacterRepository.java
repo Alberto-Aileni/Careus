@@ -16,4 +16,6 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
     List<Character> findByNameContainingIgnoreCase(String name);
 
     List<Character> findByCountrys_Id(Long idCountry);
+
+    List<Character> findByDisciplines_Id(long idDiscipline);
 }

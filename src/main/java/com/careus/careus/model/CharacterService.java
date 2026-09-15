@@ -38,4 +38,11 @@ public class CharacterService {
                 .map(characterMapper::toResponseDTO)
                 .toList();
     }
+
+    public List<CharacterResponseDTO> getCharactersFromDiscipline(Long id){
+        return characterRepository.findByDisciplines_Id(id)
+                .stream()
+                .map(characterMapper::toResponseDTO)
+                .toList();
+    }
 }

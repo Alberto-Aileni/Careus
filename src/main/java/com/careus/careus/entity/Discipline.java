@@ -1,9 +1,9 @@
 package com.careus.careus.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "discipline")
@@ -19,10 +19,18 @@ public class Discipline {
     @Column(name = "description")
     private String description;
 
-    public Discipline(Long id, String name, String description) {
+    @ManyToMany
+    @JoinTable(name = "disciplines_characters",
+            joinColumns = @JoinColumn(name = "id_discipline"),
+            inverseJoinColumns = @JoinColumn(name = "id_character")
+    )
+    private Set<Character> characters = new HashSet<>();
+
+    public Discipline(Long id, String name, String description, Set<Character> characters) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.characters = characters;
     }
 
     public Long getId() {
@@ -47,5 +55,13 @@ public class Discipline {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Set<Character> characters) {
+        this.characters = characters;
     }
 }
