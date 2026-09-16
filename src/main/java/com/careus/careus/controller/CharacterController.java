@@ -23,7 +23,7 @@ public class CharacterController {
         this.characterMapper = characterMapper;
     }
 
-    @GetMapping("/characters/{id}")
+    @GetMapping("/character/{id}")
     public ResponseEntity<Optional<CharacterFullResponseDTO>> getCharacetersById(@PathVariable Long id){
         Optional<CharacterFullResponseDTO> character = characterService.getCharactersById(id);
         return ResponseEntity.ok(character);
@@ -38,6 +38,18 @@ public class CharacterController {
     @GetMapping("/name/{name}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterByName(@PathVariable String name){
         List<CharacterFullResponseDTO> characters = characterService.getCharacterByName(name);
+        return ResponseEntity.ok(characters);
+    }
+
+    @GetMapping("/work/{id}")
+    public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterFromWork(@PathVariable Long id){
+        List<CharacterFullResponseDTO> characters = characterService.getCharactersFromWork(id);
+        return ResponseEntity.ok(characters);
+    }
+
+    @GetMapping("/idea/{id}")
+    public ResponseEntity<List<CharacterFullResponseDTO>> getCharacetersFromIdea(@PathVariable Long id){
+        List<CharacterFullResponseDTO> characters = characterService.getCharactersFromIdea(id);
         return ResponseEntity.ok(characters);
     }
 

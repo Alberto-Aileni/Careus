@@ -15,11 +15,12 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     Optional<Character> findByWork_Id(Long idWork);
 
-    Optional<Character> findByidea_Id(Long idIdea);
+    Optional<Character> findByIdea_Id(Long idIdea);
 
     List<Character> findByNameContainingIgnoreCase(String name);
 
     List<Character> findByCountrys_Id(Long idCountry);
 
-    List<Character> findByDisciplines_Id(long idDiscipline);
+    List<Character> findByDisciplines_Id(Long idDiscipline);
+
 }

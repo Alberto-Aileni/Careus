@@ -32,16 +32,16 @@ public class DisciplineMapperImpl implements DisciplineMapper{
     }
 
     private List<CharacterBasicResponseDTO> mapCharacters(Set<Character> characters){
-        return characters.stream().map(c -> new CharacterBasicResponseDTO(
-                        c.getId(),
-                        c.getName(),
-                        c.getBirthPlace(),
-                        c.getNacionalities(),
-                        c.getLanguage(),
-                        c.getDescription(),
-                        c.getImageUrl(),
-                        c.getBirthDate(),
-                        c.getPassingDate()
+        return characters.stream().map(character -> new CharacterBasicResponseDTO(
+                character.getId(),
+                character.getName(),
+                character.getBirthPlace(),
+                character.getNacionalities(),
+                character.getLanguage(),
+                character.getDescription(),
+                character.getImageUrl(),
+                character.getBirthDate(),
+                character.getPassingDate()
                 )
         ).toList();
     }

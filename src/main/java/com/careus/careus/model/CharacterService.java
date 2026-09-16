@@ -1,6 +1,7 @@
 package com.careus.careus.model;
 
 import com.careus.careus.mapper.CharacterMapper;
+import com.careus.careus.mapper.IdeaMapper;
 import org.springframework.stereotype.Service;
 import com.careus.careus.dto.response.CharacterFullResponseDTO;
 
@@ -40,6 +41,20 @@ public class CharacterService {
 
     public List<CharacterFullResponseDTO> getCharacterByName(String name){
         return characterRepository.findByNameContainingIgnoreCase(name)
+                .stream()
+                .map(characterMapper::toFullResponseDTO)
+                .toList();
+    }
+
+    public List<CharacterFullResponseDTO> getCharactersFromWork(Long id){
+        return characterRepository.findByWork_Id(id)
+                .stream()
+                .map(characterMapper::toFullResponseDTO)
+                .toList();
+    }
+
+    public List<CharacterFullResponseDTO> getCharactersFromIdea(Long id){
+        return characterRepository.findByIdea_Id(id)
                 .stream()
                 .map(characterMapper::toFullResponseDTO)
                 .toList();

@@ -46,39 +46,39 @@ public class CharacterMapperImpl implements CharacterMapper{
     }
 
     private List<CountryBasicResponseDTO> mapCountrys(Set<Country> countries){
-        return countries.stream().map(c -> new CountryBasicResponseDTO(
-                c.getId(),
-                c.getName(),
-                c.getDescription(),
-                c.getFlagUrl(),
-                c.getFormationDate(),
-                c.getDismatleDate()
+        return countries.stream().map(cuntry -> new CountryBasicResponseDTO(
+                cuntry.getId(),
+                cuntry.getName(),
+                cuntry.getDescription(),
+                cuntry.getFlagUrl(),
+                cuntry.getFormationDate(),
+                cuntry.getDismatleDate()
         )).toList();
     }
 
     private List<DisciplineBasicResponseDTO> mapDisciplines(Set<Discipline> disciplines){
-        return disciplines.stream().map(c -> new DisciplineBasicResponseDTO(
-                c.getId(),
-                c.getName(),
-                c.getDescription()
+        return disciplines.stream().map(discipline -> new DisciplineBasicResponseDTO(
+                discipline.getId(),
+                discipline.getName(),
+                discipline.getDescription()
         )).toList();
     }
 
     private List<WorkResponseDTO> mapWorks(List<Work> works){
-        return works.stream().map(c -> new WorkResponseDTO(
-                c.getId(),
-                c.getNombre(),
-                c.getDescripcion(),
-                c.getLanguage(),
-                c.getCreationDate()
+        return works.stream().map(work -> new WorkResponseDTO(
+                work.getId(),
+                work.getNombre(),
+                work.getDescripcion(),
+                work.getLanguage(),
+                work.getCreationDate()
         )).toList();
     }
 
     private List<IdeaResponseDTO> mapIdeas(List<Idea> ideas){
-    return ideas.stream().map(c -> new IdeaResponseDTO(
-            c.getId(),
-            c.getName(),
-            c.getDescription()
+    return ideas.stream().map(idea -> new IdeaResponseDTO(
+            idea.getId(),
+            idea.getName(),
+            idea.getDescription()
     )).toList();
     }
 

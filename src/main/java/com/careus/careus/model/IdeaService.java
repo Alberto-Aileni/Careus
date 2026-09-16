@@ -20,7 +20,7 @@ public class IdeaService {
         this.ideaMapper = ideaMapper;
     }
 
-    public Optional<IdeaResponseDTO> FindIdiaById(Long id){
+    public Optional<IdeaResponseDTO> getIdeaById(Long id){
         return ideaRepository.findById(id)
                 .map(ideaMapper::toResponseDTO);
     }
