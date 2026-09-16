@@ -1,11 +1,10 @@
 package com.careus.careus.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "country")
@@ -30,13 +29,21 @@ public class Country {
     @Column(name = "dismatle_date")
     private LocalDate dismatleDate;
 
-    public Country(Long id, String name, String description, String flagUrl, LocalDate formationDate, LocalDate dismatleDate) {
+    @ManyToMany
+    @JoinTable(name = "characters_countrys",
+            joinColumns = @JoinColumn(name = "id_country"),
+            inverseJoinColumns = @JoinColumn(name = "id_character")
+    )
+    private Set<Character> characters = new HashSet<>();
+
+    public Country(Long id, String name, String description, String flagUrl, LocalDate formationDate, LocalDate dismatleDate, Set<Character> characters) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.flagUrl = flagUrl;
         this.formationDate = formationDate;
         this.dismatleDate = dismatleDate;
+        this.characters = characters;
     }
 
     public Long getId() {
@@ -85,5 +92,13 @@ public class Country {
 
     public void setDismatleDate(LocalDate dismatleDate) {
         this.dismatleDate = dismatleDate;
+    }
+
+    public Set<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Set<Character> characters) {
+        this.characters = characters;
     }
 }

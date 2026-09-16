@@ -39,4 +39,10 @@ public class CharacterController {
         List<CharacterResponseDTO> characters = characterService.getCharacterFromCountry(id);
         return ResponseEntity.ok(characters);
     }
+
+    @GetMapping("/discipline/{id}")
+    ResponseEntity<List<CharacterResponseDTO>> getCharactersByDiscipline(@PathVariable Long id){
+        List<CharacterResponseDTO> characters = characterService.getCharactersFromDiscipline(id);
+        return ResponseEntity.ok(characters);
+    }
 }
