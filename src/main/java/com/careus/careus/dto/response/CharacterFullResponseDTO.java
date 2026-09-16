@@ -3,7 +3,7 @@ package com.careus.careus.dto.response;
 import java.time.LocalDate;
 import java.util.List;
 
-public record CharacterResponseDTO(
+public record CharacterFullResponseDTO(
         Long id,
         String name,
         String birthPlace,
@@ -13,8 +13,8 @@ public record CharacterResponseDTO(
         String imageUrl,
         LocalDate birthDate,
         LocalDate passingDate,
-        List<CountryResponseDTO> countrys,
-        List<DisciplineResponseDTO> disciplines,
+        List<CountryBasicResponseDTO> countrys,
+        List<DisciplineBasicResponseDTO> disciplines,
         List<WorkResponseDTO> works,
         List<IdeaResponseDTO> ideas
         ){}

@@ -12,5 +12,5 @@ public interface IdeaRepository extends JpaRepository<Idea, Long> {
 
     Optional<Idea> findById(Long id);
 
-    Optional<List<Idea>> findByName(String name);
+    List<Idea> findByName(String name);
 }

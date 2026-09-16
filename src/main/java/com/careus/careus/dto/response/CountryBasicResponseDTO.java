@@ -2,7 +2,7 @@ package com.careus.careus.dto.response;
 
 import java.time.LocalDate;
 
-public record CountryResponseDTO(
+public record CountryBasicResponseDTO(
         Long id,
         String name,
         String description,

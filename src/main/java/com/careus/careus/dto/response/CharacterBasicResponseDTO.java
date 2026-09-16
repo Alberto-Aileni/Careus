@@ -12,7 +12,5 @@ public record CharacterBasicResponseDTO(
         String description,
         String imageUrl,
         LocalDate birthDate,
-        LocalDate passingDate,
-        List<WorkResponseDTO> works,
-        List<IdeaResponseDTO> ideas
+        LocalDate passingDate
 ){}

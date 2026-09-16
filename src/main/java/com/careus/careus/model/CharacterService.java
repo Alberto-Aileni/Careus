@@ -2,9 +2,11 @@ package com.careus.careus.model;
 
 import com.careus.careus.mapper.CharacterMapper;
 import org.springframework.stereotype.Service;
-import com.careus.careus.dto.response.CharacterResponseDTO;
+import com.careus.careus.dto.response.CharacterFullResponseDTO;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CharacterService {
@@ -17,31 +19,36 @@ public class CharacterService {
         this.characterMapper = characterMapper;
     }
 
-    public List<CharacterResponseDTO> getCharacters(){
+    public Optional<CharacterFullResponseDTO> getCharactersById(Long id){
+        return characterRepository.findById(id)
+                .map(characterMapper::toFullResponseDTO);
+    }
+
+    public List<CharacterFullResponseDTO> getCharacters(){
         return characterRepository.findAll()
                 .stream()
-                .map(characterMapper::toResponseDTO)
+                .map(characterMapper::toFullResponseDTO)
                 .toList();
     }
 
-    public List<CharacterResponseDTO> getCharacterFromCountry(Long id){
+    public List<CharacterFullResponseDTO> getCharacterFromCountry(Long id){
         return characterRepository.findByCountrys_Id(id)
                 .stream()
-                .map(characterMapper::toResponseDTO)
+                .map(characterMapper::toFullResponseDTO)
                 .toList();
     }
 
-    public List<CharacterResponseDTO> getCharacterByName(String name){
+    public List<CharacterFullResponseDTO> getCharacterByName(String name){
         return characterRepository.findByNameContainingIgnoreCase(name)
                 .stream()
-                .map(characterMapper::toResponseDTO)
+                .map(characterMapper::toFullResponseDTO)
                 .toList();
     }
 
-    public List<CharacterResponseDTO> getCharactersFromDiscipline(Long id){
+    public List<CharacterFullResponseDTO> getCharactersFromDiscipline(Long id){
         return characterRepository.findByDisciplines_Id(id)
                 .stream()
-                .map(characterMapper::toResponseDTO)
+                .map(characterMapper::toFullResponseDTO)
                 .toList();
     }
 }

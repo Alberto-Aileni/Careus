@@ -12,6 +12,8 @@ public interface DisciplineRepository extends JpaRepository<Discipline, Long> {
 
     Optional<Discipline> findById(Long id);
 
-    Optional<List<Discipline>> findByName(String name);
+    List<Discipline> findByName(String name);
+
+    List<Discipline> findByCharacter_Id(Long idCharacter);
 
 }

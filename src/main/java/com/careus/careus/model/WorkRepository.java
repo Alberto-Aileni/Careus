@@ -12,5 +12,5 @@ public interface WorkRepository extends JpaRepository<Work, Long> {
 
     Optional<Work> findById(Long id);
 
-    Optional<List<Work>> findByNombre(String nombre);
+    List<Work> findByName(String name);
 }

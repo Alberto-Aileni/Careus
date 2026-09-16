@@ -12,9 +12,8 @@ import java.util.Set;
 public class CharacterMapperImpl implements CharacterMapper{
 
     @Override
-    public CharacterResponseDTO toResponseDTO(Character character){
-
-        return new CharacterResponseDTO(
+    public CharacterFullResponseDTO toFullResponseDTO(Character character){
+        return new CharacterFullResponseDTO(
                 character.getId(),
                 character.getName(),
                 character.getBirthPlace(),
@@ -31,8 +30,23 @@ public class CharacterMapperImpl implements CharacterMapper{
         );
     }
 
-    private List<CountryResponseDTO> mapCountrys(Set<Country> countries){
-        return countries.stream().map(c -> new CountryResponseDTO(
+    @Override
+    public CharacterBasicResponseDTO toBasicResponseDTO(Character character){
+        return new CharacterBasicResponseDTO(
+                character.getId(),
+                character.getName(),
+                character.getBirthPlace(),
+                character.getNacionalities(),
+                character.getLanguage(),
+                character.getDescription(),
+                character.getImageUrl(),
+                character.getBirthDate(),
+                character.getPassingDate()
+        );
+    }
+
+    private List<CountryBasicResponseDTO> mapCountrys(Set<Country> countries){
+        return countries.stream().map(c -> new CountryBasicResponseDTO(
                 c.getId(),
                 c.getName(),
                 c.getDescription(),
@@ -42,8 +56,8 @@ public class CharacterMapperImpl implements CharacterMapper{
         )).toList();
     }
 
-    private List<DisciplineResponseDTO> mapDisciplines(Set<Discipline> disciplines){
-        return disciplines.stream().map(c -> new DisciplineResponseDTO(
+    private List<DisciplineBasicResponseDTO> mapDisciplines(Set<Discipline> disciplines){
+        return disciplines.stream().map(c -> new DisciplineBasicResponseDTO(
                 c.getId(),
                 c.getName(),
                 c.getDescription()
