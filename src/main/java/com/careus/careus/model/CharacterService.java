@@ -1,6 +1,5 @@
 package com.careus.careus.model;
 
-import com.careus.careus.entity.Character;
 import com.careus.careus.mapper.CharacterMapper;
 import org.springframework.stereotype.Service;
 import com.careus.careus.dto.response.CharacterResponseDTO;
