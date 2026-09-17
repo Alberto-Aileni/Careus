@@ -22,25 +22,25 @@ public class DisciplineController {
         this.disciplineMapper = disciplineMapper;
     }
 
-    @GetMapping("/discipline/id")
-    public ResponseEntity<Optional<DisciplineFullResponseDTO>> getCuntryById(Long id){
-        Optional<DisciplineFullResponseDTO> discipline = disciplineService.getDisciplineById(id);
-        return ResponseEntity.ok(discipline);
-    }
-
-    @GetMapping("/disciplines")
+    @GetMapping("/discipline/disciplines")
     public ResponseEntity<List<DisciplineFullResponseDTO>> getCountrys(){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDisciplines();
         return ResponseEntity.ok(disciplines);
     }
 
-    @GetMapping("/nameDiscipline/{name}")
+    @GetMapping("/discipline/id/{id}")
+    public ResponseEntity<Optional<DisciplineFullResponseDTO>> getCuntryById(Long id){
+        Optional<DisciplineFullResponseDTO> discipline = disciplineService.getDisciplineById(id);
+        return ResponseEntity.ok(discipline);
+    }
+
+    @GetMapping("/discipline/name/{name}")
     public ResponseEntity<List<DisciplineFullResponseDTO>> getCountrysByName(String name){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDisciplinesByname(name);
         return ResponseEntity.ok(disciplines);
     }
 
-    @GetMapping("/CharactersDisciplines/{id}")
+    @GetMapping("/discipline/character/{id}")
     public ResponseEntity<List<DisciplineFullResponseDTO>> getConutrysFromCharacter(Long id){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDiscipliesFromCharacter(id);
         return ResponseEntity.ok(disciplines);

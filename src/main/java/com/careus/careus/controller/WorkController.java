@@ -23,19 +23,19 @@ public class WorkController {
         this.workMapper = workMapper;
     }
 
-    @GetMapping("/work/{id}")
+    @GetMapping("/work/works")
+    public ResponseEntity<List<WorkResponseDTO>> getWorks(){
+        List<WorkResponseDTO> works = workService.getWorks();
+        return ResponseEntity.ok(works);
+    }
+    
+    @GetMapping("/work/id/{id}")
     public ResponseEntity<Optional<WorkResponseDTO>> getWorkById(Long id){
         Optional<WorkResponseDTO> work = workService.getWorkById(id);
         return ResponseEntity.ok(work);
     }
 
-    @GetMapping("/works")
-    public ResponseEntity<List<WorkResponseDTO>> getWorks(){
-        List<WorkResponseDTO> works = workService.getWorks();
-        return ResponseEntity.ok(works);
-    }
-
-    @GetMapping("/nameWorks/{name}")
+    @GetMapping("/work/name/{name}")
     public ResponseEntity<List<WorkResponseDTO>> getWorksByName(String name){
         List<WorkResponseDTO> works = workService.getWorksByName(name);
         return ResponseEntity.ok(works);

@@ -24,19 +24,19 @@ public class IdeaController {
         this.ideaMapper = ideaMapper;
     }
 
-    @GetMapping("/Idea/¨{id}")
-    public ResponseEntity<Optional<IdeaResponseDTO>> getIdeasById(Long id){
-        Optional<IdeaResponseDTO> idea = ideaService.getIdeaById(id);
-        return ResponseEntity.ok(idea);
-    }
-
-    @GetMapping("/Ideas")
+    @GetMapping("/idea/ideas")
     public ResponseEntity<List<IdeaResponseDTO>> getideas(){
         List<IdeaResponseDTO> ideas = ideaService.getIdeas();
         return ResponseEntity.ok(ideas);
     }
 
-    @GetMapping("/nameIdeas/{name}")
+    @GetMapping("/idea/id/¨{id}")
+    public ResponseEntity<Optional<IdeaResponseDTO>> getIdeasById(Long id){
+        Optional<IdeaResponseDTO> idea = ideaService.getIdeaById(id);
+        return ResponseEntity.ok(idea);
+    }
+
+    @GetMapping("/idea/name/{name}")
     public ResponseEntity<List<IdeaResponseDTO>> getIdeasByName(String name){
         List<IdeaResponseDTO> ideas = ideaService.getIdeaByName(name);
         return ResponseEntity.ok(ideas);

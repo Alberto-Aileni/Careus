@@ -23,43 +23,43 @@ public class CharacterController {
         this.characterMapper = characterMapper;
     }
 
-    @GetMapping("/characterr/{id}")
-    public ResponseEntity<Optional<CharacterFullResponseDTO>> getCharacetersById(@PathVariable Long id){
-        Optional<CharacterFullResponseDTO> character = characterService.getCharactersById(id);
-        return ResponseEntity.ok(character);
-    }
-
-    @GetMapping("/characters")
+    @GetMapping("/character/characters")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacters(){
         List<CharacterFullResponseDTO> characters = characterService.getCharacters();
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/nameCharacter/{name}")
+    @GetMapping("/character/id/{id}")
+    public ResponseEntity<Optional<CharacterFullResponseDTO>> getCharacetersById(@PathVariable Long id){
+        Optional<CharacterFullResponseDTO> character = characterService.getCharactersById(id);
+        return ResponseEntity.ok(character);
+    }
+
+    @GetMapping("/character/name/{name}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterByName(@PathVariable String name){
         List<CharacterFullResponseDTO> characters = characterService.getCharacterByName(name);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/workr/{id}")
+    @GetMapping("/character/workr/{id}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterFromWork(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharactersFromWork(id);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/idea/{id}")
+    @GetMapping("/character/idea/{id}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacetersFromIdea(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharactersFromIdea(id);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/countryCharacter/{id}")
+    @GetMapping("/character/country/{id}")
     ResponseEntity<List<CharacterFullResponseDTO>> getCharactersByCountry(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharacterFromCountry(id);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/discipline/{id}")
+    @GetMapping("/character/discipline/{id}")
     ResponseEntity<List<CharacterFullResponseDTO>> getCharactersByDiscipline(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharactersFromDiscipline(id);
         return ResponseEntity.ok(characters);

@@ -22,25 +22,25 @@ public class CountryController {
         this.countryMapper = countryMapper;
     }
 
-    @GetMapping("/country/{id}")
-    public ResponseEntity<Optional<CountryFullResponseDTO>> getCountryById(Long id){
-        Optional<CountryFullResponseDTO> country = countryService.getCountryById(id);
-        return ResponseEntity.ok(country);
-    }
-
-    @GetMapping("/nameCountry/{name}")
-    public ResponseEntity<List<CountryFullResponseDTO>> getCountryByName(String name){
-        List<CountryFullResponseDTO> countrys = countryService.getCountryByName(name);
-        return ResponseEntity.ok(countrys);
-    }
-
-    @GetMapping("/country")
+    @GetMapping("/country/countrys")
     public ResponseEntity<List<CountryFullResponseDTO>> getCountrys(){
         List<CountryFullResponseDTO> countrys = countryService.getCountrys();
         return ResponseEntity.ok(countrys);
     }
 
-    @GetMapping("/characterrr/{id}")
+    @GetMapping("/country/id/{id}")
+    public ResponseEntity<Optional<CountryFullResponseDTO>> getCountryById(Long id){
+        Optional<CountryFullResponseDTO> country = countryService.getCountryById(id);
+        return ResponseEntity.ok(country);
+    }
+
+    @GetMapping("/country/name/{name}")
+    public ResponseEntity<List<CountryFullResponseDTO>> getCountryByName(String name){
+        List<CountryFullResponseDTO> countrys = countryService.getCountryByName(name);
+        return ResponseEntity.ok(countrys);
+    }
+
+    @GetMapping("/country/character/{id}")
     public ResponseEntity<List<CountryFullResponseDTO>> getCountrysFromCharacter(Long id){
         List<CountryFullResponseDTO> countrys = countryService.getCountrysFromCharacter(id);
         return ResponseEntity.ok(countrys);
