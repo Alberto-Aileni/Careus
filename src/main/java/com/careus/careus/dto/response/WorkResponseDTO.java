@@ -4,7 +4,7 @@ import java.util.Date;
 
 public record WorkResponseDTO(
         Long id,
-        String nombre,
+        String name,
         String descripcion,
         String language,
         Date creationDate

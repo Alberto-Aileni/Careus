@@ -67,7 +67,7 @@ public class CharacterMapperImpl implements CharacterMapper{
     private List<WorkResponseDTO> mapWorks(List<Work> works){
         return works.stream().map(work -> new WorkResponseDTO(
                 work.getId(),
-                work.getNombre(),
+                work.getName(),
                 work.getDescripcion(),
                 work.getLanguage(),
                 work.getCreationDate()

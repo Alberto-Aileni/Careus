@@ -28,7 +28,7 @@ public class CountryController {
         return ResponseEntity.ok(country);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/nameCountry/{name}")
     public ResponseEntity<List<CountryFullResponseDTO>> getCountryByName(String name){
         List<CountryFullResponseDTO> countrys = countryService.getCountryByName(name);
         return ResponseEntity.ok(countrys);
@@ -40,7 +40,7 @@ public class CountryController {
         return ResponseEntity.ok(countrys);
     }
 
-    @GetMapping("/character/{id}")
+    @GetMapping("/characterrr/{id}")
     public ResponseEntity<List<CountryFullResponseDTO>> getCountrysFromCharacter(Long id){
         List<CountryFullResponseDTO> countrys = countryService.getCountrysFromCharacter(id);
         return ResponseEntity.ok(countrys);

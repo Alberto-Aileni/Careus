@@ -14,5 +14,5 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
 
     List<Country> findByName(String name);
 
-    List<Country> findByCharaceter_Id(long idCharacter);
+    List<Country> findByCharacters_Id(long idCharacter);
 }

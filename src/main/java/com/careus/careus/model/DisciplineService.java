@@ -41,7 +41,7 @@ public class DisciplineService {
     }
 
     public List<DisciplineFullResponseDTO> getDiscipliesFromCharacter(Long id){
-        return disciplineRepository.findByCharacter_Id(id)
+        return disciplineRepository.findByCharacters_Id(id)
                 .stream()
                 .map(disciplineMapper::toFullResponseDTO)
                 .toList();

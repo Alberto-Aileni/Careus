@@ -23,7 +23,7 @@ public class CharacterController {
         this.characterMapper = characterMapper;
     }
 
-    @GetMapping("/character/{id}")
+    @GetMapping("/characterr/{id}")
     public ResponseEntity<Optional<CharacterFullResponseDTO>> getCharacetersById(@PathVariable Long id){
         Optional<CharacterFullResponseDTO> character = characterService.getCharactersById(id);
         return ResponseEntity.ok(character);
@@ -35,13 +35,13 @@ public class CharacterController {
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/nameCharacter/{name}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterByName(@PathVariable String name){
         List<CharacterFullResponseDTO> characters = characterService.getCharacterByName(name);
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/work/{id}")
+    @GetMapping("/workr/{id}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterFromWork(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharactersFromWork(id);
         return ResponseEntity.ok(characters);
@@ -53,7 +53,7 @@ public class CharacterController {
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/country/{id}")
+    @GetMapping("/countryCharacter/{id}")
     ResponseEntity<List<CharacterFullResponseDTO>> getCharactersByCountry(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharacterFromCountry(id);
         return ResponseEntity.ok(characters);

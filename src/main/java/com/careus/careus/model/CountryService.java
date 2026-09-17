@@ -40,7 +40,7 @@ public class CountryService {
     }
 
     public List<CountryFullResponseDTO> getCountrysFromCharacter(Long id){
-        return countryRepository.findByCharaceter_Id(id)
+        return countryRepository.findByCharacters_Id(id)
                 .stream()
                 .map(countryMapper::toFullResponseDTO)
                 .toList();

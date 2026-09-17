@@ -13,9 +13,9 @@ public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     Optional<Character> findById(Long id);
 
-    Optional<Character> findByWork_Id(Long idWork);
+    Optional<Character> findByWorks_Id(Long idWork);
 
-    Optional<Character> findByIdea_Id(Long idIdea);
+    Optional<Character> findByIdeas_Id(Long idIdea);
 
     List<Character> findByNameContainingIgnoreCase(String name);
 

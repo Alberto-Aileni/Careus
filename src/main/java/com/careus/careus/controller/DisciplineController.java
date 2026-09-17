@@ -34,13 +34,13 @@ public class DisciplineController {
         return ResponseEntity.ok(disciplines);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/nameDiscipline/{name}")
     public ResponseEntity<List<DisciplineFullResponseDTO>> getCountrysByName(String name){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDisciplinesByname(name);
         return ResponseEntity.ok(disciplines);
     }
 
-    @GetMapping("/Characters/{id}")
+    @GetMapping("/CharactersDisciplines/{id}")
     public ResponseEntity<List<DisciplineFullResponseDTO>> getConutrysFromCharacter(Long id){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDiscipliesFromCharacter(id);
         return ResponseEntity.ok(disciplines);

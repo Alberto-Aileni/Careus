@@ -35,7 +35,7 @@ public class WorkController {
         return ResponseEntity.ok(works);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/nameWorks/{name}")
     public ResponseEntity<List<WorkResponseDTO>> getWorksByName(String name){
         List<WorkResponseDTO> works = workService.getWorksByName(name);
         return ResponseEntity.ok(works);

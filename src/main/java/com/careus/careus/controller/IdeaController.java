@@ -36,7 +36,7 @@ public class IdeaController {
         return ResponseEntity.ok(ideas);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/nameIdeas/{name}")
     public ResponseEntity<List<IdeaResponseDTO>> getIdeasByName(String name){
         List<IdeaResponseDTO> ideas = ideaService.getIdeaByName(name);
         return ResponseEntity.ok(ideas);

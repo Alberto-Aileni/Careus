@@ -16,7 +16,7 @@ public class Work {
     private long id;
 
     @Column(name = "name")
-    private String nombre;
+    private String name;
 
     @Column(name = "description")
     private String descripcion;
@@ -27,9 +27,9 @@ public class Work {
     @Column(name = "creation_date")
     private Date creationDate;
 
-    public Work(long id, String nombre, String descripcion, String language, Date creationDate) {
+    public Work(long id, String name, String descripcion, String language, Date creationDate) {
         this.id = id;
-        this.nombre = nombre;
+        this.name = name;
         this.descripcion = descripcion;
         language = language;
         this.creationDate = creationDate;
@@ -43,12 +43,12 @@ public class Work {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescripcion() {

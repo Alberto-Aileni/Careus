@@ -47,14 +47,14 @@ public class CharacterService {
     }
 
     public List<CharacterFullResponseDTO> getCharactersFromWork(Long id){
-        return characterRepository.findByWork_Id(id)
+        return characterRepository.findByWorks_Id(id)
                 .stream()
                 .map(characterMapper::toFullResponseDTO)
                 .toList();
     }
 
     public List<CharacterFullResponseDTO> getCharactersFromIdea(Long id){
-        return characterRepository.findByIdea_Id(id)
+        return characterRepository.findByIdeas_Id(id)
                 .stream()
                 .map(characterMapper::toFullResponseDTO)
                 .toList();

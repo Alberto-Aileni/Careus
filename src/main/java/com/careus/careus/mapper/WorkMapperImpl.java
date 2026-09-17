@@ -10,7 +10,7 @@ public class WorkMapperImpl implements WorkMapper{
     public WorkResponseDTO toResponseDTO(Work work) {
         return new WorkResponseDTO(
                 work.getId(),
-                work.getNombre(),
+                work.getName(),
                 work.getDescripcion(),
                 work.getLanguage(),
                 work.getCreationDate()
