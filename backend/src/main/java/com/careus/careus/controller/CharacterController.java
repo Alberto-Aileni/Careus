@@ -3,6 +3,7 @@ package com.careus.careus.controller;
 import com.careus.careus.mapper.CharacterMapper;
 import com.careus.careus.model.CharacterService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CharacterController {
 
     private final CharacterService characterService;
@@ -41,7 +43,7 @@ public class CharacterController {
         return ResponseEntity.ok(characters);
     }
 
-    @GetMapping("/character/workr/{id}")
+    @GetMapping("/character/work/{id}")
     public ResponseEntity<List<CharacterFullResponseDTO>> getCharacterFromWork(@PathVariable Long id){
         List<CharacterFullResponseDTO> characters = characterService.getCharactersFromWork(id);
         return ResponseEntity.ok(characters);
