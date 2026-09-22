@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { use } from './hooks/use.js';
+import { useCharacter } from './hooks/useCharacter.js';
 
 export default function App() {
-    const { data, loading, error, fetchAll } = use();
+    const { data, loading, error, fetchAll } = useCharacter();
 
     useEffect(() => {
         fetchAll();
