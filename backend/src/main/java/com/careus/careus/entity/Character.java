@@ -1,12 +1,14 @@
 package com.careus.careus.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "character")
+@NoArgsConstructor
 public class Character {
 
     @Id

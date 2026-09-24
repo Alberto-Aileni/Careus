@@ -1,6 +1,6 @@
 
 
-export function countrySlot({name, description, image}){
+export function DisciplineSlot({name, description, image}){
 
     return(
         <article>

@@ -1,12 +1,14 @@
 package com.careus.careus.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "discipline")
+@NoArgsConstructor
 public class Discipline {
 
     @Id

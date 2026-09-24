@@ -1,23 +1,13 @@
 import { useEffect } from 'react';
 import { useCharacter } from './hooks/useCharacter.js';
+import {HomeView} from "./components/HomeView.jsx";
 
 export default function App() {
-    const { data, loading, error, fetchAll } = useCharacter();
 
-    useEffect(() => {
-        fetchAll();
-    }, []);
 
     return (
         <div>
-
-
-                <div>
-                    <pre>
-                        {JSON.stringify(data, null, 2)}
-                    </pre>
-                </div>
-
+            <HomeView/>
         </div>
     );
 }

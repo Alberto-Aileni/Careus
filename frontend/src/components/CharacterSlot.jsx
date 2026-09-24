@@ -1,10 +1,10 @@
 
 
-export function characterSlot({name, description, image}){
+export function CharacterSlot({name, description, image}){
     return(
         <article>
             <div>
-                <img scr={{image}}/>
+                <img src={image}/>
             </div>
             <h1>{name}</h1>
             <p>{description}</p>

@@ -1,6 +1,6 @@
 
 
-export function searchCharacter(){
+export function SearchCharacter(){
 
     return(
         <article>

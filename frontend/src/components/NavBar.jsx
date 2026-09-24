@@ -1,6 +1,6 @@
 
 
-export function navBar(){
+export function NavBar(){
     return(
         <article>
             <nav>

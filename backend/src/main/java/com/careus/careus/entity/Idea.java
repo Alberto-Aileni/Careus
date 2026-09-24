@@ -4,9 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "idea")
+@NoArgsConstructor
 public class Idea {
     @Id
     @Column(name = "id_idea", unique = true)
