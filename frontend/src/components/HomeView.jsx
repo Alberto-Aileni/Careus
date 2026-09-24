@@ -32,10 +32,10 @@ export function HomeView(){
             <div>
                 {data && data.map((character) => (
                     <CharacterSlot
-                        key={character.id || character.idCharacter}
+                        key={character.idCharacter}
                         name={character.name}
                         description={character.description}
-                        image={character.imageUrl || character.image}
+                        image={character.image}
                     />
                 ))}
             </div>

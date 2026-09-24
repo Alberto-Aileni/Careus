@@ -1,12 +1,9 @@
 
 
-export function DisciplineSlot({name, description, image}){
+export function DisciplineSlot({name, description}){
 
     return(
         <article>
-            <div>
-                <img src={image}/>
-            </div>
             <h1>{name}</h1>
             <p>{description}</p>
         </article>

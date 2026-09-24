@@ -33,7 +33,7 @@ public class Work {
         this.id = id;
         this.name = name;
         this.descripcion = descripcion;
-        language = language;
+        this.language = language;
         this.creationDate = creationDate;
     }
 
