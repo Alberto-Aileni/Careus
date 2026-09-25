@@ -28,6 +28,7 @@ export function DisciplinesView(){
                 {data && data.map( (discipline) => (
                     <CountrySlot
                         key={discipline.idDiscipline}
+                        id={discipline.idDiscipline}
                         name={discipline.name}
                         description={discipline.description}
                         image={discipline.image}

@@ -1,8 +1,14 @@
 
 
-export function CharacterSlot({name, description, image}){
+export function CharacterSlot({id, name, description, image}){
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/character/${id}`);
+    };
+
     return(
-        <article>
+        <article onClick={handleClick}>
             <div>
                 <img src={image}/>
             </div>

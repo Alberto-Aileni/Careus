@@ -30,6 +30,7 @@ export function CharactersView(){
                 { data && data.map((character) => (
                     <CharacterSlot
                     key={character.idCharacter}
+                    id={character.idCharacter}
                     name={character.name}
                     description={character.description}
                     image={character.image}

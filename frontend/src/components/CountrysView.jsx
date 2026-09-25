@@ -34,6 +34,7 @@ export function CountrysView(){
                 { data && data.map((country) => (
                     <CountrySlot
                         key={country.idCountry}
+                        id={country.idCountry}
                         name={country.name}
                         description={country.description}
                         image={country.image}
