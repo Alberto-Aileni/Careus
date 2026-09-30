@@ -1,4 +1,7 @@
-
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useCharacter } from "../hooks/useCharacter.js";
+import { NavBar } from "./NavBar.jsx";
 
 export function SelectedCharacterView({name, description, image, birthPlace, nacionalities, language, birthDate, passingDate, countrys, disciplines, works, ideas}){
     const { id } = useParams();
@@ -13,6 +16,7 @@ export function SelectedCharacterView({name, description, image, birthPlace, nac
 
     return(
         <section>
+            <NavBar></NavBar>
             <div>
                 <img src={character.image}/>
             </div>
