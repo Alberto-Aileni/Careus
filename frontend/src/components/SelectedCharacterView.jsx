@@ -16,7 +16,7 @@ export function SelectedCharacterView({name, description, image, birthPlace, nac
 
     return(
         <section>
-            <NavBar></NavBar>
+            <NavBar/>
             <div>
                 <img src={character.image}/>
             </div>
