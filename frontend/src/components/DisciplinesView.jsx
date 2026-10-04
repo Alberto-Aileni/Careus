@@ -16,9 +16,6 @@ export function DisciplinesView(){
     return (
         <section>
             <div>
-                <NavBar/>
-            </div>
-            <div>
                 <SectionTitle/>
             </div>
             <div>

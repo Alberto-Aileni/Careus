@@ -18,9 +18,6 @@ export function CharactersView(){
     return(
         <section>
             <div>
-                <NavBar/>
-            </div>
-            <div>
                 <SectionTitle/>
             </div>
             <div>

@@ -22,9 +22,6 @@ export function CountrysView(){
     return(
         <section>
             <div>
-                <NavBar/>
-            </div>
-            <div>
                 <SectionTitle/>
             </div>
             <div>

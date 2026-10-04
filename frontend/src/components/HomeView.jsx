@@ -17,12 +17,11 @@ export function HomeView(){
 
     console.log("Datos del backend:", data);
     console.log("Error de la API:", error);
-
+    if (data) {
+        console.log("Estructura de tu personaje en la API:", data[0]);
+    }
     return(
         <div>
-            <div>
-                <NavBar/>
-            </div>
             <div>
                 <AppIcon/>
             </div>
@@ -32,8 +31,8 @@ export function HomeView(){
             <div>
                 {data && data.map((character) => (
                     <CharacterSlot
-                        key={character.idCharacter}
-                        id={character.idCharacter}
+                        key={character.id}
+                        id={character.id}
                         name={character.name}
                         description={character.description}
                         image={character.image}

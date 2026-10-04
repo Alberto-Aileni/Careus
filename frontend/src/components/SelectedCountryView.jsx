@@ -10,7 +10,6 @@ export function SelectedCountryView({name, description, flag, formationDate, dis
 
     return(
         <section>
-            <NavBar/>
             <div>
                 <img src={flag}/>
             </div>
