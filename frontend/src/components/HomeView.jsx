@@ -15,11 +15,6 @@ export function HomeView(){
         []
     )
 
-    console.log("Datos del backend:", data);
-    console.log("Error de la API:", error);
-    if (data) {
-        console.log("Estructura de tu personaje en la API:", data[0]);
-    }
     return(
         <div>
             <div>

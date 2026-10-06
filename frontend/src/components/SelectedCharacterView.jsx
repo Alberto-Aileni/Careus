@@ -13,19 +13,17 @@ export function SelectedCharacterView({ name, description, image }) {
         }
     }, [id]);
 
-    if (loading) return <p>Cargando personaje...</p>;
-    if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
-    if (!character) return null;
+    if (!character) {
+        return null;
+    }
 
     return (
         <section>
             <div>
-                <button onClick={() => navigate("/")} style={{ cursor: "pointer", marginBottom: "1rem" }}>
-                    Volver
-                </button>
+                <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
             </div>
             <div>
-                <img src={character.image} alt={character.name} />
+                <img src={character.image}/>
             </div>
             <h1>{character.name}</h1>
             <p>{character.description}</p>

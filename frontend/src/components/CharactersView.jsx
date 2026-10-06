@@ -26,8 +26,8 @@ export function CharactersView(){
             <div>
                 { data && data.map((character) => (
                     <CharacterSlot
-                    key={character.idCharacter}
-                    id={character.idCharacter}
+                    key={character.id}
+                    id={character.id}
                     name={character.name}
                     description={character.description}
                     image={character.image}

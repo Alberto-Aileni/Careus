@@ -1,9 +1,11 @@
+import {useNavigate} from "react-router-dom";
 
 
 export function CountrySlot({id ,name, description, flag}){
+    const navigate = useNavigate();
 
     return(
-        <article>
+        <article onClick={() => navigate(`/country/${id}`) } style={{ cursor: 'pointer' }}>
             <div>
                 <img src={flag}/>
             </div>

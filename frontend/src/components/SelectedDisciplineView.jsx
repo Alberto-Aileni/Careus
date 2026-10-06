@@ -1,18 +1,29 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useCharacter } from "../hooks/useCharacter.js";
-import { NavBar } from "./NavBar.jsx";
+import {useDiscipline} from "../hooks/useDiscipline.js";
 
-export function SelectedDisciplineView({name, description, characters}){
+export function SelectedDisciplineView({name, description}){
     const { id } = useParams();
-    const { data: character, fetchById, loading, error } = useCharacter();
+    const navigate = useNavigate();
+    const { data: discipline, fetchById, loading, error } = useDiscipline();
 
+    useEffect(() => {
+        if (id) {
+            fetchById(id);
+        }
+    }, [id]);
+
+    if (!discipline) {
+        return null;
+    }
 
     return(
         <section>
-            <h1>{name}</h1>
-            <p>{description}</p>
-            <p>{characters}</p>
+            <div>
+                <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
+            </div>
+            <h1>{discipline.name}</h1>
+            <p>{discipline.description}</p>
         </section>
     )
 }

@@ -1,23 +1,32 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useCharacter } from "../hooks/useCharacter.js";
-import { NavBar } from "./NavBar.jsx";
+import { useCountry } from "../hooks/useCountry.js";
 
-export function SelectedCountryView({name, description, flag, formationDate, dismatleDate, characters}){
+export function SelectedCountryView({name, description, flag}){
     const { id } = useParams();
-    const { data: character, fetchById, loading, error } = useCharacter();
+    const navigate = useNavigate();
+    const { data: country, fetchById, loading, error } = useCountry();
 
+    useEffect(() => {
+        if (id) {
+            fetchById(id);
+        }
+    }, [id]);
+
+    if (!country) {
+        return null;
+    }
 
     return(
         <section>
             <div>
-                <img src={flag}/>
+                <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
             </div>
-            <h1>{name}</h1>
-            <p>{description}</p>
-            <p>{formationDate}</p>
-            <p>{dismatleDate}</p>
-            <p>{characters}</p>
+            <div>
+                <img src={country.flag}/>
+            </div>
+            <h1>{country.name}</h1>
+            <p>{country.description}</p>
         </section>
     )
 }

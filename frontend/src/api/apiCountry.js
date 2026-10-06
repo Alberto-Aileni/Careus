@@ -1,6 +1,6 @@
 import {apiResquest} from "./apiClient.js";
 
-export const apiContry = {
+export const apiCountry = {
 
     getAll: () => apiResquest(`/country/countrys`),
 

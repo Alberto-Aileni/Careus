@@ -4,6 +4,7 @@ import com.careus.careus.dto.response.WorkResponseDTO;
 import com.careus.careus.mapper.WorkMapper;
 import com.careus.careus.model.WorkService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.service.annotation.GetExchange;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class WorkController {
 
     public final WorkService workService;

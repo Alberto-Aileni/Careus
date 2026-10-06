@@ -1,5 +1,5 @@
 import {useState, useCallback} from "react";
-import {apiContry} from "../api/apiContry.js";
+import {apiCountry} from "../api/apiCountry.js";
 
 export function useCountry() {
     const [data, setData] = useState(null);
@@ -24,9 +24,9 @@ export function useCountry() {
         data,
         loading,
         error,
-        fetchAll: () => executeCall( () => apiContry.getAll()),
-        fetchById: (id) => executeCall( () => apiContry.getById(id)),
-        fetchByName: (name) => executeCall( () => apiContry.getByName(name)),
-        fetchByCharacter: (id) => executeCall( () => apiContry.getByCharacter())
+        fetchAll: () => executeCall( () => apiCountry.getAll()),
+        fetchById: (id) => executeCall( () => apiCountry.getById(id)),
+        fetchByName: (name) => executeCall( () => apiCountry.getByName(name)),
+        fetchByCharacter: (id) => executeCall( () => apiCountry.getByCharacter())
     }
 }

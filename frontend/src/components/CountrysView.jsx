@@ -16,22 +16,16 @@ export function CountrysView(){
         []
     )
 
-    console.log("Datos del backend:", data);
-    console.log("Error de la API:", error);
-
     return(
         <section>
             <div>
                 <SectionTitle/>
             </div>
             <div>
-                <SearchCharacter/>
-            </div>
-            <div>
                 { data && data.map((country) => (
                     <CountrySlot
-                        key={country.idCountry}
-                        id={country.idCountry}
+                        key={country.id}
+                        id={country.id}
                         name={country.name}
                         description={country.description}
                         image={country.image}

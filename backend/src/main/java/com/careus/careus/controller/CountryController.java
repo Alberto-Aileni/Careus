@@ -4,6 +4,7 @@ import com.careus.careus.dto.response.CountryFullResponseDTO;
 import com.careus.careus.mapper.CountryMapper;
 import com.careus.careus.model.CountryService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CountryController {
 
     public final CountryService countryService;
