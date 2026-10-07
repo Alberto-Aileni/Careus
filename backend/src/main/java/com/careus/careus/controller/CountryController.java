@@ -6,6 +6,7 @@ import com.careus.careus.model.CountryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,19 +32,19 @@ public class CountryController {
     }
 
     @GetMapping("/country/id/{id}")
-    public ResponseEntity<Optional<CountryFullResponseDTO>> getCountryById(Long id){
+    public ResponseEntity<Optional<CountryFullResponseDTO>> getCountryById(@PathVariable Long id){
         Optional<CountryFullResponseDTO> country = countryService.getCountryById(id);
         return ResponseEntity.ok(country);
     }
 
     @GetMapping("/country/name/{name}")
-    public ResponseEntity<List<CountryFullResponseDTO>> getCountryByName(String name){
+    public ResponseEntity<List<CountryFullResponseDTO>> getCountryByName(@PathVariable String name){
         List<CountryFullResponseDTO> countrys = countryService.getCountryByName(name);
         return ResponseEntity.ok(countrys);
     }
 
     @GetMapping("/country/character/{id}")
-    public ResponseEntity<List<CountryFullResponseDTO>> getCountrysFromCharacter(Long id){
+    public ResponseEntity<List<CountryFullResponseDTO>> getCountrysFromCharacter(@PathVariable Long id){
         List<CountryFullResponseDTO> countrys = countryService.getCountrysFromCharacter(id);
         return ResponseEntity.ok(countrys);
     }

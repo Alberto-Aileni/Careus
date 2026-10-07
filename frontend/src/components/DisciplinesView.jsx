@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import {useDiscipline} from "../hooks/useDiscipline.js";
-import {NavBar} from "./NavBar.jsx";
 import {SectionTitle} from "./SectionTitle.jsx";
 import {CountrySlot} from "./CountrySlot.jsx";
 

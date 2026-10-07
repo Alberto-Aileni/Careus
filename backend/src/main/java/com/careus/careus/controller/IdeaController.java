@@ -8,6 +8,7 @@ import com.careus.careus.model.IdeaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -33,13 +34,13 @@ public class IdeaController {
     }
 
     @GetMapping("/idea/id/¨{id}")
-    public ResponseEntity<Optional<IdeaResponseDTO>> getIdeasById(Long id){
+    public ResponseEntity<Optional<IdeaResponseDTO>> getIdeasById(@PathVariable Long id){
         Optional<IdeaResponseDTO> idea = ideaService.getIdeaById(id);
         return ResponseEntity.ok(idea);
     }
 
     @GetMapping("/idea/name/{name}")
-    public ResponseEntity<List<IdeaResponseDTO>> getIdeasByName(String name){
+    public ResponseEntity<List<IdeaResponseDTO>> getIdeasByName(@PathVariable String name){
         List<IdeaResponseDTO> ideas = ideaService.getIdeaByName(name);
         return ResponseEntity.ok(ideas);
     }

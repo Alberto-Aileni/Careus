@@ -18,10 +18,6 @@ export function SelectedDisciplineView({name, description}){
         return null;
     }
 
-    console.log("ID de la URL:", id);
-    console.log("Error del hook:", error);
-    console.log("Datos recibidos:", discipline);
-
     return(
         <section>
             <div>

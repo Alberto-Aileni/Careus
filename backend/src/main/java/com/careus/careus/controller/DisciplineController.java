@@ -6,6 +6,7 @@ import com.careus.careus.model.DisciplineService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,19 +32,19 @@ public class DisciplineController {
     }
 
     @GetMapping("/discipline/id/{id}")
-    public ResponseEntity<Optional<DisciplineFullResponseDTO>> getCuntryById(Long id){
+    public ResponseEntity<Optional<DisciplineFullResponseDTO>> getCuntryById(@PathVariable Long id){
         Optional<DisciplineFullResponseDTO> discipline = disciplineService.getDisciplineById(id);
         return ResponseEntity.ok(discipline);
     }
 
     @GetMapping("/discipline/name/{name}")
-    public ResponseEntity<List<DisciplineFullResponseDTO>> getCountrysByName(String name){
+    public ResponseEntity<List<DisciplineFullResponseDTO>> getCountrysByName(@PathVariable String name){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDisciplinesByname(name);
         return ResponseEntity.ok(disciplines);
     }
 
     @GetMapping("/discipline/character/{id}")
-    public ResponseEntity<List<DisciplineFullResponseDTO>> getConutrysFromCharacter(Long id){
+    public ResponseEntity<List<DisciplineFullResponseDTO>> getConutrysFromCharacter(@PathVariable Long id){
         List<DisciplineFullResponseDTO> disciplines = disciplineService.getDiscipliesFromCharacter(id);
         return ResponseEntity.ok(disciplines);
     }

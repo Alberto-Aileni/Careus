@@ -6,6 +6,7 @@ import com.careus.careus.model.WorkService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.service.annotation.GetExchange;
 
@@ -32,13 +33,13 @@ public class WorkController {
     }
     
     @GetMapping("/work/id/{id}")
-    public ResponseEntity<Optional<WorkResponseDTO>> getWorkById(Long id){
+    public ResponseEntity<Optional<WorkResponseDTO>> getWorkById(@PathVariable Long id){
         Optional<WorkResponseDTO> work = workService.getWorkById(id);
         return ResponseEntity.ok(work);
     }
 
     @GetMapping("/work/name/{name}")
-    public ResponseEntity<List<WorkResponseDTO>> getWorksByName(String name){
+    public ResponseEntity<List<WorkResponseDTO>> getWorksByName(@PathVariable String name){
         List<WorkResponseDTO> works = workService.getWorksByName(name);
         return ResponseEntity.ok(works);
     }
