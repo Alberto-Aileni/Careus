@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCountry } from "../hooks/useCountry.js";
 
-export function SelectedCountryView({name, description, flag}){
+export function SelectedCountryView({name, description, flagUrl}){
     const { id } = useParams();
     const navigate = useNavigate();
     const { data: country, fetchById, loading, error } = useCountry();
@@ -13,9 +13,7 @@ export function SelectedCountryView({name, description, flag}){
         }
     }, [id]);
 
-    if (!country) {
-        return null;
-    }
+
 
     return(
         <section>
@@ -23,7 +21,7 @@ export function SelectedCountryView({name, description, flag}){
                 <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
             </div>
             <div>
-                <img src={country.flag}/>
+                <img src={country.flagUrl}/>
             </div>
             <h1>{country.name}</h1>
             <p>{country.description}</p>

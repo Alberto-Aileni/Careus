@@ -8,6 +8,7 @@ export function SelectedDisciplineView({name, description}){
     const { data: discipline, fetchById, loading, error } = useDiscipline();
 
     useEffect(() => {
+        console.log("ID recuperado con useParams():", id, "Tipo:", typeof id);
         if (id) {
             fetchById(id);
         }
@@ -16,6 +17,10 @@ export function SelectedDisciplineView({name, description}){
     if (!discipline) {
         return null;
     }
+
+    console.log("ID de la URL:", id);
+    console.log("Error del hook:", error);
+    console.log("Datos recibidos:", discipline);
 
     return(
         <section>
