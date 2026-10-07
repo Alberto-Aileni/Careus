@@ -13,7 +13,9 @@ export function SelectedCountryView({name, description}){
         }
     }, [id]);
 
-
+    if (!country) {
+        return null;
+    }
 
     return(
         <section>
