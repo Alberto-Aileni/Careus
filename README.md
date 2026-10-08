@@ -5,7 +5,7 @@
 This is an academic project designed to categorize notable historical and intellectual figures by their respective disciplines and countries. 
 By linking individuals, locations, and areas of study within a relational model, the application provides a straightforward way to explore and visualize how these figures and concepts are interconnected.
 
-> ⚠️ **Project Status & Disclaimer**
+> ⚠️ **Project Disclaimer**
 > 
 > * **Visual Interface:** The user interface and CSS styling are currently **under active development**. The layout is functional but intentionally minimal.
 > * **In-Development Features:** Additional features, refinements to state management, and visual enhancements are being implemented Gradually.
