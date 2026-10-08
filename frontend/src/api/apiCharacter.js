@@ -1,6 +1,6 @@
 import {apiResquest} from "./apiClient.js";
 
-export const apiCharacteri = {
+export const apiCharacter = {
 
     getAll: () => apiResquest(`character/characters`),
 

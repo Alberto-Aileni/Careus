@@ -1,6 +1,5 @@
 import {CharacterSlot} from "./CharacterSlot.jsx";
 import {AppIcon} from "./AppIcon.jsx";
-import {NavBar} from "./NavBar.jsx";
 import {StartButton} from "./StartButton.jsx";
 import {useCharacter} from "../hooks/useCharacter.js";
 import {useEffect} from "react";
@@ -8,6 +7,11 @@ import {useEffect} from "react";
 export function HomeView(){
 
     const { data, fetchAll, error, loading } = useCharacter();
+    let sortedCharacters = []
+
+    if (data) {
+        sortedCharacters = [...data].sort(() => Math.random() - 0.5).slice(0, 4);
+    }
 
     useEffect(() => {
             fetchAll();
@@ -20,11 +24,12 @@ export function HomeView(){
             <div>
                 <AppIcon/>
             </div>
+            <h1>Careus</h1>
             <div>
                 <StartButton/>
             </div>
             <div>
-                {data && data.map((character) => (
+                {sortedCharacters.map((character) => (
                     <CharacterSlot
                         key={character.id}
                         id={character.id}

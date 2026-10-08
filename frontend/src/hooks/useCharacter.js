@@ -1,5 +1,5 @@
 import {useState, useCallback} from "react";
-import {apiCharacteri} from "../api/apiCharacteri.js";
+import {apiCharacter} from "../api/apiCharacter.js";
 
 export function useCharacter() {
     const [data, setData] = useState(null);
@@ -24,12 +24,12 @@ export function useCharacter() {
         data,
         loading,
         error,
-        fetchAll: () => executeCall(() => apiCharacteri.getAll()),
-        fetchById: (id) => executeCall(() => apiCharacteri.getById(id)),
-        fetchByName: (name) => executeCall(() => apiCharacteri.getByName(name)),
-        fetchByWork: (id) => executeCall(() => apiCharacteri.getByWork(id)),
-        fetchByIdea: (id) => executeCall(() => apiCharacteri.getByIdea(id)),
-        fetchByCountry: (id) => executeCall(() => apiCharacteri.getByCountry(id)),
-        fetchByDiscipline: (id) => executeCall(() => apiCharacteri.getByDiscipline(id)),
+        fetchAll: () => executeCall(() => apiCharacter.getAll()),
+        fetchById: (id) => executeCall(() => apiCharacter.getById(id)),
+        fetchByName: (name) => executeCall(() => apiCharacter.getByName(name)),
+        fetchByWork: (id) => executeCall(() => apiCharacter.getByWork(id)),
+        fetchByIdea: (id) => executeCall(() => apiCharacter.getByIdea(id)),
+        fetchByCountry: (id) => executeCall(() => apiCharacter.getByCountry(id)),
+        fetchByDiscipline: (id) => executeCall(() => apiCharacter.getByDiscipline(id)),
     };
 }

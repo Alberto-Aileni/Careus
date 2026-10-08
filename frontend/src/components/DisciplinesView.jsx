@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {useDiscipline} from "../hooks/useDiscipline.js";
 import {SectionTitle} from "./SectionTitle.jsx";
-import {CountrySlot} from "./CountrySlot.jsx";
+import {DisciplineSlot} from "./DisciplineSlot.jsx";
 
 export function DisciplinesView(){
     const { data, fetchAll, error, loading } = useDiscipline();
@@ -17,8 +17,8 @@ export function DisciplinesView(){
                 <SectionTitle/>
             </div>
             <div>
-                {data && data.map( (discipline) => (
-                    <CountrySlot
+                {data && data.map((discipline) => (
+                    <DisciplineSlot
                         key={discipline.id}
                         id={discipline.id}
                         name={discipline.name}

@@ -27,6 +27,6 @@ export function useCountry() {
         fetchAll: () => executeCall( () => apiCountry.getAll()),
         fetchById: (id) => executeCall( () => apiCountry.getById(id)),
         fetchByName: (name) => executeCall( () => apiCountry.getByName(name)),
-        fetchByCharacter: (id) => executeCall( () => apiCountry.getByCharacter())
+        fetchByCharacter: (id) => executeCall( () => apiCountry.getByCharacter(id))
     }
 }

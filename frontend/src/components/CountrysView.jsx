@@ -22,7 +22,7 @@ export function CountrysView(){
                 <SectionTitle/>
             </div>
             <div>
-                { data && data.map((country) => (
+                {data && data.map((country) => (
                     <CountrySlot
                         key={country.id}
                         id={country.id}

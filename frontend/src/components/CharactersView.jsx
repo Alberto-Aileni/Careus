@@ -21,9 +21,6 @@ export function CharactersView(){
                 <SectionTitle/>
             </div>
             <div>
-                <SearchCharacter/>
-            </div>
-            <div>
                 { data && data.map((character) => (
                     <CharacterSlot
                     key={character.id}
