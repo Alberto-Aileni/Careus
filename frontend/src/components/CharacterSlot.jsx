@@ -5,7 +5,7 @@ export function CharacterSlot({id, name, description, image}){
 
     return(
         <article onClick={() => navigate(`/character/${id}`)} style={{ cursor: 'pointer' }}>
-            <div>
+            <div className="card" >
                 <img src={image}/>
             </div>
             <h1>{name}</h1>

@@ -20,15 +20,15 @@ export function HomeView(){
     )
 
     return(
-        <div>
-            <div>
+        <div className="container">
+            <div className="top">
                 <AppIcon/>
             </div>
             <h1>Careus</h1>
             <div>
                 <StartButton/>
             </div>
-            <div>
+            <div className="grid">
                 {sortedCharacters.map((character) => (
                     <CharacterSlot
                         key={character.id}
