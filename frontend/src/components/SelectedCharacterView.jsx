@@ -4,6 +4,7 @@ import { useCharacter } from "../hooks/useCharacter.js";
 import {CountrySlot} from "./CountrySlot.jsx";
 import {useDiscipline} from "../hooks/useDiscipline.js";
 import {useCountry} from "../hooks/useCountry.js";
+import {DisciplineSlot} from "./DisciplineSlot.jsx";
 
 export function SelectedCharacterView({ name, description, image }) {
     const { id } = useParams();
@@ -36,7 +37,7 @@ export function SelectedCharacterView({ name, description, image }) {
             <p>{character.description}</p>
             <div>
                 {discipline && discipline.map((discipline) => (
-                    <CountrySlot
+                    <DisciplineSlot
                         key={discipline.id}
                         id={discipline.id}
                         name={discipline.name}
