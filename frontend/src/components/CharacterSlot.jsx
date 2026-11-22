@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import "./CharacterSlot.css"
 
 export function CharacterSlot({id, name, description, image}){
     const navigate = useNavigate();

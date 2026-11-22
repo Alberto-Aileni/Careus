@@ -3,6 +3,7 @@ import {AppIcon} from "./AppIcon.jsx";
 import {StartButton} from "./StartButton.jsx";
 import {useCharacter} from "../hooks/useCharacter.js";
 import {useEffect} from "react";
+import "./HomeView.css";
 
 export function HomeView(){
 
@@ -20,7 +21,7 @@ export function HomeView(){
     )
 
     return(
-        <div className="container">
+        <div>
             <div className="top">
                 <AppIcon/>
             </div>

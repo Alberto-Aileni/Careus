@@ -1,29 +1,19 @@
 body {
-    margin: 0;
-    background: #18181b;
-    color: white;
     font-family: sans-serif;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px 16px;
-}
 
 .top {
     text-align: center;
     margin-bottom: 32px;
+
+
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-}
-
-.card:hover {
-    background: #3f3f46;
 }
 
 .card img {
