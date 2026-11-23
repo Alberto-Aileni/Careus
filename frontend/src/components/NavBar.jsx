@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./NavBar.css"
 
 export function NavBar(){
@@ -6,14 +7,17 @@ export function NavBar(){
 
     return(
         <article>
-            <nav>
-                <button onClick={() => navigate(`/`)} style={{ cursor: 'pointer' }}>home</button>
+            <nav className="nav">
+                <Link to="/" className="nav-logo">Careus</Link>
+                <div className="nav-links">
+                    <NavLink onClick={() => navigate(`/`)}>home</NavLink>
 
-                <button onClick={() => navigate(`/character/characters`)} style={{ cursor: 'pointer' }}>characters</button>
+                    <NavLink onClick={() => navigate(`/character/characters`)}>characters</NavLink>
 
-                <button onClick={() => navigate(`/discipline/disciplines`)} style={{ cursor: 'pointer' }}>disciplines</button>
+                    <NavLink onClick={() => navigate(`/discipline/disciplines`)}>disciplines</NavLink>
 
-                <button onClick={() => navigate(`/country/countrys`)} style={{ cursor: 'pointer' }}>countrys</button>
+                    <NavLink onClick={() => navigate(`/country/countrys`)}>countrys</NavLink>
+                </div>
             </nav>
         </article>
     )
