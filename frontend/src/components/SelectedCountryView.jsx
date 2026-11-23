@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCountry } from "../hooks/useCountry.js";
 import {CharacterSlot} from "./CharacterSlot.jsx";
 import {useCharacter} from "../hooks/useCharacter.js";
+import "./SelectedCountryView.css"
 
 export function SelectedCountryView({name, description}){
     const { id } = useParams();
@@ -26,16 +27,19 @@ export function SelectedCountryView({name, description}){
             <div>
                 <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
             </div>
+            <div className="card" >
+                <img src={country.flagUrl}/>
+            </div>
             <h1>{country.name}</h1>
             <p>{country.description}</p>
-            <div>
+            <div className="grid">
                 {character && character.map((character) => (
                     <CharacterSlot
                         key={character.id}
                         id={character.id}
                         name={character.name}
                         description={character.description}
-                        image={character.image}
+                        image={character.imageUrl}
                     />
                 ))}
             </div>

@@ -6,8 +6,10 @@ export function DisciplineSlot({id, name, description}){
 
     return(
         <article onClick={() => navigate(`/discipline/${id}`)} style={{ cursor: "pointer"}}>
-            <h1>{name}</h1>
-            <p>{description}</p>
+            <div className="card">
+                <h1>{name}</h1>
+                <p>{description}</p>
+            </div>
         </article>
     )
 }

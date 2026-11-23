@@ -21,14 +21,14 @@ export function CountrysView(){
             <div>
                 <SectionTitle/>
             </div>
-            <div>
+            <div className="grid">
                 {data && data.map((country) => (
                     <CountrySlot
                         key={country.id}
                         id={country.id}
                         name={country.name}
                         description={country.description}
-                        image={country.image}
+                        image={country.flagUrl}
                     />
                 ))}
             </div>

@@ -16,14 +16,13 @@ export function DisciplinesView(){
             <div>
                 <SectionTitle/>
             </div>
-            <div>
+            <div className="grid">
                 {data && data.map((discipline) => (
                     <DisciplineSlot
                         key={discipline.id}
                         id={discipline.id}
                         name={discipline.name}
                         description={discipline.description}
-                        image={discipline.image}
                     />
                     ))}
             </div>

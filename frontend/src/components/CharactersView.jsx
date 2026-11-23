@@ -27,7 +27,7 @@ export function CharactersView(){
                     id={character.id}
                     name={character.name}
                     description={character.description}
-                    image={character.image}
+                    image={character.imageUrl}
                     />
                 ))}
             </div>

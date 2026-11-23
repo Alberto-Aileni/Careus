@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import {useDiscipline} from "../hooks/useDiscipline.js";
 import {CharacterSlot} from "./CharacterSlot.jsx";
 import {useCharacter} from "../hooks/useCharacter.js";
+import "./SelectedDisciplineView.css"
 
 export function SelectedDisciplineView({name, description}){
     const { id } = useParams();
@@ -28,14 +29,14 @@ export function SelectedDisciplineView({name, description}){
             </div>
             <h1>{discipline.name}</h1>
             <p>{discipline.description}</p>
-            <div>
+            <div className="grid">
                 {character && character.map((character) => (
                     <CharacterSlot
                         key={character.id}
                         id={character.id}
                         name={character.name}
                         description={character.description}
-                        image={character.image}
+                        image={character.imageUrl}
                     />
                 ))}
             </div>

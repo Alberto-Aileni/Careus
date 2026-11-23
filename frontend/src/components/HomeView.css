@@ -2,14 +2,6 @@ body {
     font-family: sans-serif;
 }
 
-
-.top {
-    text-align: center;
-    margin-bottom: 32px;
-
-
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -23,12 +15,3 @@ body {
     border-radius: 6px;
 }
 
-.card h3 {
-    margin: 10px 0 4px;
-}
-
-.card p {
-    margin: 0;
-    color: #d4d4d8;
-    font-size: 14px;
-}

@@ -22,7 +22,7 @@ export function HomeView(){
 
     return(
         <div>
-            <div className="top">
+            <div>
                 <AppIcon/>
             </div>
             <h1>Careus</h1>
@@ -36,7 +36,7 @@ export function HomeView(){
                         id={character.id}
                         name={character.name}
                         description={character.description}
-                        image={character.image}
+                        image={character.imageUrl}
                     />
                 ))}
             </div>

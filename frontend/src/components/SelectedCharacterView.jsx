@@ -5,6 +5,7 @@ import {CountrySlot} from "./CountrySlot.jsx";
 import {useDiscipline} from "../hooks/useDiscipline.js";
 import {useCountry} from "../hooks/useCountry.js";
 import {DisciplineSlot} from "./DisciplineSlot.jsx";
+import "./SelectedCharacterView.css"
 
 export function SelectedCharacterView({ name, description, image }) {
     const { id } = useParams();
@@ -30,12 +31,12 @@ export function SelectedCharacterView({ name, description, image }) {
             <div>
                 <button onClick={() => navigate("/")} style={{ cursor: "pointer"}}>Volver</button>
             </div>
-            <div>
-                <img src={character.image}/>
+            <div className="card" >
+                <img src={character.imageUrl}/>
             </div>
             <h1>{character.name}</h1>
             <p>{character.description}</p>
-            <div>
+            <div className="grid">
                 {discipline && discipline.map((discipline) => (
                     <DisciplineSlot
                         key={discipline.id}
@@ -46,14 +47,14 @@ export function SelectedCharacterView({ name, description, image }) {
                     />
                 ))}
             </div>
-            <div>
+            <div className="grid">
                 {country && country.map((country) => (
                     <CountrySlot
                         key={country.id}
                         id={country.id}
                         name={country.name}
                         description={country.description}
-                        image={country.image}
+                        image={country.flagUrl}
                     />
                 ))}
             </div>
